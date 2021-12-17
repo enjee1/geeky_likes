@@ -54,10 +54,15 @@ public class TestController {
         return ResponseEntity.ok(response.getArticles());
     }
 
-    //TODO: finish the below route
     /*@GetMapping("/newsCategory/{category}")
-    public ResponseEntity<?> getArticlesByCategory() {
+    public ResponseEntity<?> getArticlesByCategory(@PathVariable String category) {
+        // Possible options: business,entertainment,general,health,science,sports,technology. Default: all categories.
+        String uri = "https://newsapi.org/v2/top-headlines/sources?category=" + category + "&apiKey=" + apiKey;
 
+
+        NewsResponse response = restTemplate.getForObject(uri, NewsResponse.class);
+
+        return ResponseEntity.ok(response.getArticles());
     }*/
 
 
